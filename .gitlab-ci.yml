@@ -1,0 +1,31 @@
+include:
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate.gitlab-ci.yml'
+    ref: v3.4.5
+  - template: 'Workflows/Branch-Pipelines.gitlab-ci.yml'
+
+variables:
+  LOG_LEVEL: info
+  RENOVATE_LOG_FILE_LEVEL: trace
+  RENOVATE_EXTENDS: ""
+  RENOVATE_CONFIG_FILE: "config-default.js"
+  RENOVATE_REQUIRE_CONFIG: "false"
+  RENOVATE_AUTODISCOVER: "true"
+  RENOVATE_AUTODISCOVER_FILTER: "${CI_PROJECT_ROOT_NAMESPACE}/renovate"
+  RENOVATE_DRY_RUN: "true"
+
+renovate:
+  rules:
+   - when: manual
+
+renovate-with-regex:
+  variables:
+    RENOVATE_EXTENDS: "local>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
+  extends:
+    - renovate
+
+renovate-full-conf:
+  variables:
+    RENOVATE_EXTENDS: "local>${CI_PROJECT_PATH}//config-presets/default, local>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
+  extends:
+    - renovate

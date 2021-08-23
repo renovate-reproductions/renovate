@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+   "branchConcurrentLimit": 0,
+   "prConcurrentLimit": 0, 
+   "prHourlyLimit": 0,
+   "regexManagers": [
+    {
+      "fileMatch": ["(^|/)Dockerfile$"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["renovate","major-update"]
+    },
+    {
+      "matchUpdateTypes": ["minor","patch"],
+      "labels": ["renovate","minor-update"]
+    }
+  ],
+  "extends": [
+    "config:base",
+    "github>whitesource/merge-confidence:beta"
+  ]
+}
