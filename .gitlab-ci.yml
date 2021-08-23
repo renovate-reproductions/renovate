@@ -15,8 +15,8 @@ variables:
   RENOVATE_DRY_RUN: "true"
 
 renovate:
-  rules:
-   - when: manual
+  only:
+  when: manual
 
 renovate-with-regex:
   variables:
