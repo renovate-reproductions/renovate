@@ -20,12 +20,12 @@ renovate:
 
 renovate-with-regex:
   variables:
-    RENOVATE_EXTENDS: "local>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
+    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
   extends:
     - renovate
 
 renovate-full-conf:
   variables:
-    RENOVATE_EXTENDS: "local>${CI_PROJECT_PATH}//config-presets/default, local>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
+    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/default, gitlab>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
   extends:
     - renovate

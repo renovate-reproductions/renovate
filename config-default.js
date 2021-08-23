@@ -3,6 +3,6 @@ module.exports = {
  onboarding: false,
  extends: [
    // WARNING : this file will be taken from the DEFAULT branch
-   "local>"+process.env.CI_PROJECT_PATH+"//config-presets/default",
+   "gitlab>"+process.env.CI_PROJECT_PATH+"//config-presets/default",
  ]
 };
