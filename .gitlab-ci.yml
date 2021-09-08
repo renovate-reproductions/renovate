@@ -1,7 +1,7 @@
 include:
   - project: 'renovate-bot/renovate-runner'
     file: '/templates/renovate.gitlab-ci.yml'
-    ref: v3.4.5
+    ref: v3.18.3
   - template: 'Workflows/Branch-Pipelines.gitlab-ci.yml'
 
 variables:
@@ -18,14 +18,8 @@ renovate:
   rules:
    - when: manual
 
-renovate-with-regex:
+renovate-groupall:
   variables:
-    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
-  extends:
-    - renovate
-
-renovate-full-conf:
-  variables:
-    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/default, gitlab>${CI_PROJECT_PATH}//config-presets/helm-only-regex"
+    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/default"
   extends:
     - renovate
