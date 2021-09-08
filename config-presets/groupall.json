@@ -25,7 +25,6 @@
   "extends": [
     "config:base",
     "github>whitesource/merge-confidence:beta",
-    "group:all",
-    ":preserveSemverRanges"
+    "group:all"
   ]
 }
