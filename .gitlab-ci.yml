@@ -18,8 +18,15 @@ renovate:
   rules:
    - when: manual
 
-renovate-groupall:
+renovate-default:
   variables:
     RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/default"
   extends:
     - renovate
+
+renovate-groupall:
+  variables:
+    RENOVATE_EXTENDS: "gitlab>${CI_PROJECT_PATH}//config-presets/groupall"
+  extends:
+    - renovate
+
