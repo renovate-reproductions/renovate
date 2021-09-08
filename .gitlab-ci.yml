@@ -14,8 +14,8 @@ variables:
   RENOVATE_AUTODISCOVER_FILTER: "${CI_PROJECT_ROOT_NAMESPACE}/renovate"
   RENOVATE_DRY_RUN: "false"
   RENOVATE_BASE_BRANCHES: "${CI_COMMIT_REF_NAME}"
-  RENOVATE_BRANCH_PREFIX: "renovate-groupall-bump/"
-  RENOVATE_RANGE_STRATEGY: "bump"
+  RENOVATE_BRANCH_PREFIX: "renovate-groupall-update-lockfile/"
+  RENOVATE_RANGE_STRATEGY: "update-lockfile"
 
 renovate:
   rules:
