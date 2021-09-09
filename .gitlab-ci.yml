@@ -15,7 +15,6 @@ variables:
   RENOVATE_DRY_RUN: "false"
   RENOVATE_BASE_BRANCHES: "${CI_COMMIT_REF_NAME}"
   RENOVATE_BRANCH_PREFIX: "renovate-groupall-bump/"
-  RENOVATE_RANGE_STRATEGY: "bump"
 
 renovate:
   rules:
