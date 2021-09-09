@@ -6,7 +6,7 @@ include:
 
 variables:
   LOG_LEVEL: info
-  RENOVATE_LOG_FILE_LEVEL: trace
+  RENOVATE_LOG_FILE_LEVEL: debug
   RENOVATE_EXTENDS: ""
   RENOVATE_CONFIG_FILE: "config-default.js"
   RENOVATE_REQUIRE_CONFIG: "false"
