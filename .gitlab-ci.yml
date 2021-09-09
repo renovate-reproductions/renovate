@@ -1,7 +1,7 @@
 include:
   - project: 'renovate-bot/renovate-runner'
     file: '/templates/renovate.gitlab-ci.yml'
-    ref: v3.18.3
+    ref: v3.18.5
   - template: 'Workflows/Branch-Pipelines.gitlab-ci.yml'
 
 variables:
