@@ -1,6 +1,6 @@
 variables:
   CHART_SOURCES_URL: "https://gitlab.com/ajoux.accor/renovate.git"
-  CHART_SOURCES_VERSION: "debug-5.5.0"
+  CHART_SOURCES_VERSION: "debug-5.6.0"
 
 test-job:
   stage: test
